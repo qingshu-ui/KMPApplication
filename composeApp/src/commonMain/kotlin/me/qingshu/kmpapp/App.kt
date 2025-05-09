@@ -3,6 +3,7 @@ package me.qingshu.kmpapp
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.Button
 import androidx.compose.material.MaterialTheme
@@ -17,6 +18,7 @@ import kmpapplication.composeapp.generated.resources.Res
 import kmpapplication.composeapp.generated.resources.compose_multiplatform
 import me.qingshu.kmpapp.theme.AppTheme
 import me.qingshu.kmpapp.ui.LoginScreen
+import me.qingshu.kmpapp.ui.TopBar
 
 @Composable
 @Preview
@@ -38,6 +40,13 @@ fun App() {
     // }
 
     AppTheme {
-        LoginScreen()
+        Column(
+            modifier = Modifier
+                .fillMaxSize(),
+            horizontalAlignment = Alignment.CenterHorizontally,
+        ) {
+            TopBar()
+            LoginScreen()
+        }
     }
 }
